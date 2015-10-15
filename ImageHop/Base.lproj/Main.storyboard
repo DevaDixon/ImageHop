@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ImageHop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Sul-a4-2K5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="347"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frame-1" translatesAutoresizingMaskIntoConstraints="NO" id="dgO-0Z-KQ0">
+                                <rect key="frame" x="72" y="158" width="176" height="167"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frame-1" translatesAutoresizingMaskIntoConstraints="NO" id="x0m-Ld-RaH">
+                                <rect key="frame" x="166" y="147" width="120" height="120"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frame-1" translatesAutoresizingMaskIntoConstraints="NO" id="sak-rX-3ky">
+                                <rect key="frame" x="235" y="136" width="85" height="85"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frame-1" translatesAutoresizingMaskIntoConstraints="NO" id="omL-d5-78S">
+                                <rect key="frame" x="7" y="136" width="85" height="85"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frame-1" translatesAutoresizingMaskIntoConstraints="NO" id="sk1-oY-6pV">
+                                <rect key="frame" x="38" y="147" width="120" height="120"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwl-Nn-2DG">
+                                <rect key="frame" x="133" y="355" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" autorepeat="NO" value="1" minimumValue="0.25" maximumValue="1.75" stepValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="aPQ-AP-pRS">
+                                <rect key="frame" x="113" y="435" width="94" height="29"/>
+                                <color key="backgroundColor" red="0.0" green="0.61960786581039429" blue="0.10588236153125763" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="setIncrement:" destination="vXZ-lx-hvc" eventType="valueChanged" id="mut-zk-a6a"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maximum Hops Per Second:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liv-Ka-1VK">
+                                <rect key="frame" x="28" y="28" width="202" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.00 hps" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWZ-6Z-cjf">
+                                <rect key="frame" x="235" y="28" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWE-Vs-JrI">
+                                <rect key="frame" x="91" y="499" width="139" height="49"/>
+                                <color key="tintColor" red="0.8058415793" green="1" blue="0.77606250669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Hop!" backgroundImage="whiteButton">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.8058415793" green="1" blue="0.77606250669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleAnimation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SxZ-IO-4L7"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.25" maxValue="1.75" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jp-dY-OOx">
+                                <rect key="frame" x="14" y="384" width="292" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.0" green="0.60392159223556519" blue="0.22352942824363708" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="maximumTrackTintColor" red="0.37647062539999998" green="0.82352948189999997" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="setSpeed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="jUQ-kO-Cjx"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21568627450980393" green="0.28627450980392155" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bunnyView1" destination="sak-rX-3ky" id="1lj-gx-F1s"/>
+                        <outlet property="bunnyView2" destination="x0m-Ld-RaH" id="nMQ-bu-Gf6"/>
+                        <outlet property="bunnyView3" destination="dgO-0Z-KQ0" id="VhE-Rm-mZE"/>
+                        <outlet property="bunnyView4" destination="sk1-oY-6pV" id="G83-ES-1HV"/>
+                        <outlet property="bunnyView5" destination="omL-d5-78S" id="eGI-j1-mdb"/>
+                        <outlet property="hopsPerSecond" destination="tWZ-6Z-cjf" id="MsL-KZ-8i9"/>
+                        <outlet property="speedSlider" destination="4Jp-dY-OOx" id="ODn-hG-AUZ"/>
+                        <outlet property="speedStepper" destination="aPQ-AP-pRS" id="a7O-SL-Bj0"/>
+                        <outlet property="toggleButton" destination="MWE-Vs-JrI" id="HcM-rv-tOE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="2398" height="1799"/>
+        <image name="frame-1" width="320" height="320"/>
+        <image name="whiteButton" width="29" height="46"/>
+    </resources>
+</document>
