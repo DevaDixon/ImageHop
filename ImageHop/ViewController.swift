@@ -40,11 +40,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func setSpeed(sender: AnyObject?) {
+        
         bunnyView3.animationDuration = Double(2.0-speedSlider.value)
-        bunnyView2.animationDuration = bunnyView1.animationDuration + Double(arc4random_uniform(10))/10.0
-        bunnyView1.animationDuration = bunnyView1.animationDuration + Double(arc4random_uniform(10))/10.0
-        bunnyView4.animationDuration = bunnyView1.animationDuration + Double(arc4random_uniform(10))/10.0
-        bunnyView5.animationDuration = bunnyView1.animationDuration + Double(arc4random_uniform(10))/10.0
+        bunnyView2.animationDuration = bunnyView3.animationDuration + Double(arc4random_uniform(10))/200.0
+        bunnyView4.animationDuration = bunnyView3.animationDuration + Double(arc4random_uniform(10))/200.0
+        bunnyView1.animationDuration = bunnyView2.animationDuration + Double(arc4random_uniform(10))/500.0
+        bunnyView5.animationDuration = bunnyView4.animationDuration + Double(arc4random_uniform(10))/500.0
         
         bunnyView1.startAnimating()
         bunnyView2.startAnimating()
@@ -54,10 +55,14 @@ class ViewController: UIViewController {
         
         toggleButton.setTitle("Stop Hop!", forState: UIControlState.Normal)
         
-        let hopRateString=String(format: "%1.2f hps", 1/(2-self.speedSlider.value))
+        speedStepper.value=Double(speedSlider.value)
+        
+        let hopRateString=String(format: "%1.2f hps", 1.0/(2-self.speedSlider.value))
         hopsPerSecond.text=hopRateString
     }
     
+    @IBAction func enterSpeed(sender: AnyObject) {
+    }
     @IBAction func setIncrement(sender: AnyObject) {
         speedSlider.value=Float(speedStepper.value)
         setSpeed(nil)
@@ -99,11 +104,11 @@ class ViewController: UIViewController {
         bunnyView3.animationImages=hopAnimation
         bunnyView4.animationImages=hopAnimation
         bunnyView5.animationImages=hopAnimation
-        bunnyView1.animationDuration=1.0
-        bunnyView2.animationDuration=1.0
-        bunnyView3.animationDuration=1.0
-        bunnyView4.animationDuration=1.0
-        bunnyView5.animationDuration=1.0
+        bunnyView1.animationDuration=1.0 //Double(4.0-speedSlider.value)
+        bunnyView2.animationDuration=1.0 //Double(4.0-speedSlider.value)
+        bunnyView3.animationDuration=1.0 //Double(4.0-speedSlider.value)
+        bunnyView4.animationDuration=1.0 //Double(4.0-speedSlider.value)
+        bunnyView5.animationDuration=1.0 //Double(4.0-speedSlider.value)
     }
 
     override func didReceiveMemoryWarning() {
