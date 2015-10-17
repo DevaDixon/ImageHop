@@ -63,9 +63,6 @@ class ViewController: UIViewController {
         
         customHopSpeed.placeholder=hopRateString
         
-        
-        NSLog(speedStepper.value.description)
-        //NSLog(String(bunnyView3.animationDuration))
     }
     
     @IBAction func hideKeyboard(sender: AnyObject) {
@@ -74,15 +71,27 @@ class ViewController: UIViewController {
     
     
     @IBAction func enterSpeed(sender: AnyObject) {
-        let speed:Double? = Double(customHopSpeed.text!)
         
-        if (speed != nil && speed > 0 && speed < 10) {
+        if ((customHopSpeed.text?.isEmpty) != true) {
             
+            let speed:Double? = Double(customHopSpeed.text!)
+        
+            if (speed > 0 && speed < 10) {
             speedSlider.value=Float((speed!-1)/speed!)
             setSpeed(nil)
+            }
+            
+        
+        
+            else {
+            
+                let alertController = UIAlertController(title: "Invalid Input", message: "Please enter a number between 0 and 10", preferredStyle: UIAlertControllerStyle.Alert)
+                let defaultAction = UIAlertAction(title: "Try again", style: UIAlertActionStyle.Cancel, handler: nil)
+            
+                alertController.addAction(defaultAction)
+                presentViewController(alertController, animated: true, completion: nil)
+            }
         }
-        
-        
     }
     
     @IBAction func setIncrement(sender: AnyObject) {
