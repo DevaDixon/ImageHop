@@ -76,14 +76,6 @@
                                     <action selector="setSpeed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="jUQ-kO-Cjx"/>
                                 </connections>
                             </slider>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wxD-bh-IMM">
-                                <rect key="frame" x="178" y="57" width="70" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <action selector="enterSpeed:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="rVf-Kr-J9y"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWE-Vs-JrI">
                                 <rect key="frame" x="91" y="478" width="139" height="49"/>
                                 <color key="tintColor" red="0.95678359742657826" green="1" blue="0.9499281740490817" alpha="1" colorSpace="calibratedRGB"/>
@@ -95,12 +87,20 @@
                                     <action selector="toggleAnimation:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SxZ-IO-4L7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter custom HPS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUw-bb-Z29">
-                                <rect key="frame" x="28" y="61" width="142" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter custom HPS (1-9):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUw-bb-Z29">
+                                <rect key="frame" x="28" y="61" width="179" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wxD-bh-IMM">
+                                <rect key="frame" x="210" y="55" width="70" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="enterSpeed:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="rVf-Kr-J9y"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.21568627450980393" green="0.28627450980392155" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
