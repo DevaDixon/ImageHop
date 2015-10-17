@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var speedStepper: UIStepper!
     @IBOutlet weak var hopsPerSecond: UILabel!
     @IBOutlet weak var toggleButton: UIButton!
+    @IBOutlet weak var customHopSpeed: UITextField!
     
     @IBAction func toggleAnimation(sender: AnyObject) {
         if (bunnyView3.isAnimating()) {
@@ -41,7 +42,7 @@ class ViewController: UIViewController {
     
     @IBAction func setSpeed(sender: AnyObject?) {
         
-        bunnyView3.animationDuration = Double(2.0-speedSlider.value)
+        bunnyView3.animationDuration = Double(1.0-speedSlider.value)
         bunnyView2.animationDuration = bunnyView3.animationDuration + Double(arc4random_uniform(10))/200.0
         bunnyView4.animationDuration = bunnyView3.animationDuration + Double(arc4random_uniform(10))/200.0
         bunnyView1.animationDuration = bunnyView2.animationDuration + Double(arc4random_uniform(10))/500.0
@@ -57,12 +58,33 @@ class ViewController: UIViewController {
         
         speedStepper.value=Double(speedSlider.value)
         
-        let hopRateString=String(format: "%1.2f hps", 1.0/(2-self.speedSlider.value))
+        let hopRateString=String(format: "%1.2f hps", 1/(1-self.speedSlider.value))
         hopsPerSecond.text=hopRateString
+        
+        customHopSpeed.placeholder=hopRateString
+        
+        
+        NSLog(speedStepper.value.description)
+        //NSLog(String(bunnyView3.animationDuration))
     }
     
-    @IBAction func enterSpeed(sender: AnyObject) {
+    @IBAction func hideKeyboard(sender: AnyObject) {
+        customHopSpeed.resignFirstResponder()
     }
+    
+    
+    @IBAction func enterSpeed(sender: AnyObject) {
+        let speed:Double? = Double(customHopSpeed.text!)
+        
+        if (speed != nil && speed > 0 && speed < 10) {
+            
+            speedSlider.value=Float((speed!-1)/speed!)
+            setSpeed(nil)
+        }
+        
+        
+    }
+    
     @IBAction func setIncrement(sender: AnyObject) {
         speedSlider.value=Float(speedStepper.value)
         setSpeed(nil)
